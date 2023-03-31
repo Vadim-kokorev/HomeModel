@@ -1,5 +1,4 @@
 <?php
-namespace HomeModel;
 require_once("flat.php");
 require_once("room.php");
 /* объекты типа House - это многоквартирный дом, имеющий 
