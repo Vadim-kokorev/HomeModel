@@ -1,10 +1,11 @@
 <?php
+declare(strict_types=1);
 require_once("room.php");
 
 class Flat{                              
     public $number;
     public $rooms;
-    function __construct($number,$room){
+    function __construct(NULL $number,$room){
         $this->number = $number;  
         $this->rooms = $room; 
     }
