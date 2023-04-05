@@ -40,10 +40,3 @@ class Cottage{
         }
     }
 };
-$rooms = array();
-$cottage1 = new Cottage("Куршево", "Мира",62,$rooms);
-$cottage1->addRooms($room10 = new Room("кухню","белого",6,6));
-$cottage1->addRooms($room11 = new Room("спальню","бежевого",5,4));
-$cottage1->addRooms($room12 = new Room("спальню","розового",5,4));
-$cottage1->addRooms($room13 = new Room("ванную","голубого",3,3));
-$cottage1->getAllInfo($cottage1);
