@@ -5,7 +5,7 @@ require_once("room.php");
 class Flat{                              
     public $number;
     public $rooms;
-    function __construct(NULL $number,$room){
+    function __construct(array $room){
         $this->number = $number;  
         $this->rooms = $room; 
     }
@@ -15,17 +15,15 @@ class Flat{
     public function getNumber(){
         return $this->number;
     }
-    public function setNumber($number){
+    public function setNumber(int $number){
         $this->number = $number;
     }
-    public function addRooms($nextroom){
+    public function addRooms(object $nextroom){
         array_push($this->rooms,$nextroom);
     }
     public function getRooms(){
-        echo " в квартире номер $this->number есть ";
+        echo " в квартире номер $this->number есть комната";
         foreach ($this->rooms as $roomp){
-            echo  $roomp->name;
-            echo " {$roomp->color} цвета";
             echo " длиной {$roomp->length}"; 
             echo " и шириной {$roomp->width}"; 
     }

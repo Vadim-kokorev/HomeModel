@@ -9,7 +9,7 @@ class Cottage{
     public $street;
     public $number;
     public $rooms;
-    function __construct(string $sity,string $street,int $number,$room){
+    function __construct(string $sity,string $street,int $number,array $room){
         $this->sity = $sity;
         $this->street = $street;
         $this->number = $number;
@@ -23,13 +23,13 @@ class Cottage{
     public function getNumber(){
         return $this->number;
     }
-    public function setNumber($number){
+    public function setNumber(int $number){
         $this->number = $number;
     }
-    public function addRooms($nextroom){
+    public function addRooms(object $nextroom){
         array_push($this->rooms,$nextroom);
     }
-    public function getAllInfo($cottagep){
+    public function getAllInfo(object $cottagep){
         $cottagep->getInfo();
         echo " под номером $this->number. Дом содержит в себе ";
         foreach ($this->rooms as $roomp){

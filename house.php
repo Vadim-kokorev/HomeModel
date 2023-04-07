@@ -10,7 +10,7 @@ class House{
     public $street;
     public $number;
     public $flats;
-    function __construct(string $sity,string $street,int $number,$flat){
+    function __construct(string $sity,string $street,int $number,array $flat){
         $this->sity = $sity;
         $this->street = $street;
         $this->number = $number;
@@ -24,10 +24,10 @@ class House{
     public function getNumber(){
         return $this->number;
     }
-    public function setNumber($number){
+    public function setNumber(int $number){
         $this->number = $number;
     }
-    public function addFlats($nextflat){
+    public function addFlats(object $nextflat){
         array_push($this->flats,$nextflat);
     }
     public function getFlats(){
@@ -36,7 +36,7 @@ class House{
             echo "$flatp->number, ";
         }
     }
-    public function getAllInfo($housep){
+    public function getAllInfo(object $housep){
         $housep->getInfo();
         echo " под номером $this->number. Дом содержит в себе ";
         foreach ($this->flats as $flatp){
