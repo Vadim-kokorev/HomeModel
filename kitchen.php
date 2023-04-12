@@ -1,25 +1,25 @@
 <?php
 require_once("room.php");
 class Kitchen extends Room{
-    public $name;
-    public $color;
-    public $furniture;
-    function __construct(int $length,int $width, array $furniture){
-        /*parent::__construct(int $length,int $width);*/
-        $this->$furniture = $furniture;
+    public string $name = "кухня";
+    public string $color;
+    public array $furnitures = array();
+
+    public function __construct($length, $width){
+        parent::__construct($length, $width);
+        $this->color = "белая";
     }
-    public function checkColor(){  //позволяет узнать цвет комнаты
-        echo $this->color;
+    public function AddFurniture(string $furniture) : array{
+        array_push($this->furnitures,$furniture);
     }
-    public function changeColor(string $color){   //позволяет поменять цвет комнаты
-        $this->color = $color;
+    public function getInfoRoom() : string{
+        return "эта комната-{$this->color} {$this->name} длинной {$this->length}м и шириной {$this->width}м, в которой есть такая мебель, как ";
+        foreach ($this->furnitures as $furniture){
+            return " {$furniture},";
     }
-    public function getInfoRoom(){
-        $inforoom = parent::getInfoRooms();
-        $inforoom .=" {$this->name}"." {$this->color}"; 
-        echo $inforoom;
-    }
+}
 };
-$furniturearr = array();
-$kitchen1 = new Kitchen(4,3,$furniturearr);
-$kitchen1->getInfoRooms();
+$kitchen1 = new Kitchen(3,4);
+//$kitchen1->changeColor("белая");
+$kitchen1->AddFurnitures("стол");
+echo $kitchen1->getInfoRoom();

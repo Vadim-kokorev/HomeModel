@@ -22,7 +22,7 @@ $flat1->addRooms($room2 = new Room("спальню","синего",4,3));
 $flat2->addRooms($room3 = new Room("кухня","желтого",7,3));
 $room1->changeColor("черного");
 // построены комнаты в двух квартирах
-$house1->getAllInfo($house1);  //используя метод getAllInfo класса House, получаем всю информацию о доме house1
+$house1->getAllInfo();  //используя метод getAllInfo класса House, получаем всю информацию о доме house1
 
 /*$cottage1 = new Cottage("Куршево", "Мира",62,$rooms);
 $cottage1->addRooms($room10 = new Room("кухню","белого",6,6));
