@@ -8,21 +8,18 @@ class Room{
     public string $color;
     public int $length;
     public int $width;
-    public object $typeroom;
     function __construct(int $length,int $width){
         $this->length = $length;
         $this->width = $width;
+        $this->color = "белой";
     }
-    public function checkColor(){  //позволяет узнать цвет комнаты
+    public function checkColor() : string{  //позволяет узнать цвет комнаты
         return $this->color;
     }
-    public function changeColor(string $color){   //позволяет поменять цвет комнаты
+    public function changeColor(string $color) : void{   //позволяет поменять цвет комнаты
         $this->color = $color;
     }
-    public function typeRoom(object $typeroom){
-        $this->typeroom = $typeroom;
-    }
-    public function getInfoRooms() : string{
-            return "Комната длиной {$this->length}м и шириной {$this->width}м {$this->typeroom->getInfoRoom()}"; 
+    public function getSize() : string{
+            return "Комната длиной {$this->length}м и шириной {$this->width}м "; 
     }
 };

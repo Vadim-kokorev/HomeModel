@@ -23,7 +23,7 @@ class House{
     public function getNumber() : int{
         return $this->number;
     }
-    public function setNumber(int $number){
+    public function setNumber(int $number) : void{
         $this->number = $number;
     }
     public function addFlats(object $nextflat){
@@ -36,10 +36,11 @@ class House{
         }
     }
     public function getAllInfo(){
-        echo "Дом находится в городе {$this->city}, "."на улице {$this->street}"." под номером $this->number. Дом содержит в себе";
+        $houseinfo = "Дом находится в городе {$this->city}, "."на улице {$this->street}"." под номером $this->number. \nДом содержит в себе квартиры:";
         foreach ($this->flats as $flat){
-            echo "{$flat->getRooms()}";
+            $houseinfo .= "{$flat->getInfoRooms()} \n";
     }
+    return $houseinfo;
 }
     
 };
@@ -47,17 +48,16 @@ $house1 = new House("Гагарин","Голубинская",15);
 /*создаем объект типа House, с адрессом Москва, Улица Голубинская, 
 д.15.*/
 $kitchen1 = new Kitchen(3,4);
-$kitchen1->changeColor("белая");
+$kitchen1->changeColor("голубой");
 $kitchen1->AddFurniture("стол");
-$room4 = new Room(2,3);
-$room4->typeRoom($kitchen1);
+$kitchen1->AddFurniture("стул");
 $flat1 = new Flat();
 $flat1->setNumber(30);
-$flat1->addRooms($room4);
+$flat1->addRooms($kitchen1);
 $kitchen2 = new Kitchen(4,5);
-$flat1->addRooms($room5 = new Room(8,9));
-$room5->typeRoom($kitchen2);
 $kitchen2->AddFurniture("стул");
+$flat1->addRooms($kitchen2);
+//echo $flat1->getInfoRooms();
 $house1->addflats($flat1);
 // созданы две разные квартиры в доме house1
 echo $house1->getAllInfo();  //используя метод getAllInfo класса House, получаем всю информацию о доме house1

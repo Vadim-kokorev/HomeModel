@@ -15,13 +15,14 @@ class Flat{
     public function setNumber(int $number){
         $this->number = $number;
     }
-    public function addRooms(object $nextroom){
+    public function addRooms(object $nextroom) : void{
         array_push($this->rooms,$nextroom);
     }
-    public function getRooms(){
-        echo " квартиру номер $this->number в которой есть: ";
+    public function getInfoRooms(){
+        $info = "номер $this->number c: ";
         foreach ($this->rooms as $room){
-            echo "{$room->getInfoRooms()}"; 
+            $info .= "{$room->getInfoRoom()}\n"; 
     }
+    return $info;
 }
 }; 

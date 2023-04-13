@@ -9,11 +9,10 @@ class Cottage{
     public string $street;
     public int $number;
     public array $rooms;
-    function __construct(string $sity,string $street,int $number,array $room){
+    function __construct(string $sity,string $street,int $number){
         $this->sity = $sity;
         $this->street = $street;
         $this->number = $number;
-        $this->rooms = $room;
     }
     /* методы класса Cottage позволяют получить адрес дома, его номер, если он есть, а если нет, то 
     добавить его, а также добавить новую квартиру в дом и получить полную информацию о нем*/
